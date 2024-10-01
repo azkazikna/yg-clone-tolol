@@ -9,6 +9,8 @@ app.post('/webhook', (req, res) => {
 	// Log payload untuk debugging
 	console.log('Payload received:', req.body);
 
+	console.log('Ref:', req.body.ref);
+
 	// Periksa apakah event yang diterima adalah push
 	if (req.body.ref === 'refs/heads/main') { // Ganti 'master' dengan 'main' jika branch Anda adalah main
 		// Jalankan perintah git pull
