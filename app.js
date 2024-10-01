@@ -10,16 +10,16 @@ app.post('/webhook', (req, res) => {
 	console.log('Payload received:', req.body);
 
 	// Periksa apakah event yang diterima adalah push
-	if (req.body.ref === 'refs/heads/master') { // Ganti 'master' dengan 'main' jika branch Anda adalah main
+	if (req.body.ref === 'refs/heads/main') { // Ganti 'master' dengan 'main' jika branch Anda adalah main
 		// Jalankan perintah git pull
-		exec('git pull origin master', { cwd: 'D:/DEVELOPMENT/yg-clone-tolol' }, (error, stdout, stderr) => {
+		exec('git pull origin main', { cwd: 'D:/DEVELOPMENT/yg-clone-tolol' }, (error, stdout, stderr) => {
 			if (error) {
 				console.error(`exec error: ${error}`);
 				return res.status(500).send('Error pulling repository');
 			}
 			console.log(`stdout: ${stdout}`);
 			console.log(`stderr: ${stderr}`);
-			return res.send('Repository updated');
+			return res.send('Repository updated'); ''
 		});
 	} else {
 		console.log('Event not handled: ', req.body.ref);
