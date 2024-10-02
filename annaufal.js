@@ -1,1 +1,1 @@
-console.log('serlok takasd konsddsfsdfdsffdssollok 3');
+console.log('serlok tdsakasd konsddsfsdfdsffdssollok 3');
